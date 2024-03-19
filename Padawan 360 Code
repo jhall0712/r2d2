@@ -62,6 +62,9 @@ const int SABERTOOTHBAUDRATE = 9600;
 // and I think it varies across different firmware versions.
 const int DOMEBAUDRATE = 9600;
 
+// Set the baude rate for AstroPixels Plus
+const int MARCDUINOBAUDRATE = 9600;
+
 // Default sound volume at startup
 // 0 = full volume, 255 off
 byte vol = 50;
@@ -86,22 +89,6 @@ int turnDirection = 55;
 #include <dome/HoloLights.h>
 #include <dome/NeoPSI.h>
 #include <i2c/I2CReceiver.h>
-
-
-//////////////////////////////////////////////////////////////////
-///AstroPixels////////////////////////////////////////////////////
-
-I2CReceiver i2cReceiver(0x0a);
-
-AstroPixelRLD<> RLD(LogicEngineRLDDefault, 3);
-AstroPixelFLD<> FLD(LogicEngineFLDDefault, 1);
-
-AstroPixelFrontPSI<> frontPSI(LogicEngineFrontPSIDefault, 4);
-AstroPixelRearPSI<> rearPSI(LogicEngineRearPSIDefault, 5);
-
-HoloLights frontHolo(25, HoloLights::kRGB);
-HoloLights rearHolo(26, HoloLights::kRGB);
-HoloLights topHolo(27, HoloLights::kRGB);
 
 
 /////////////////////////////////////////////////////////////////
@@ -169,7 +156,6 @@ pin 11 to transmit (TX) */
 Uncomment one of MicroMaestro or MiniMaestro below depending
 on which one you have. */
 //MicroMaestro maestro(maestroSerial);
-//MiniMaestro maestrolift(Serial3);
 MiniMaestro maestrobody(maestroSerial);
 MiniMaestro maestrodome(maestroSerial2);
 
@@ -180,7 +166,7 @@ MiniMaestro maestrodome(maestroSerial2);
 void setup() {
   Serial1.begin(SABERTOOTHBAUDRATE);
   Serial2.begin(DOMEBAUDRATE);
-//  Serial3.begin(9600);  
+  Serial3.begin(MARCDUINOBAUDRATE);
   maestroSerial.begin(9600);
   maestroSerial2.begin(9600);
 
@@ -624,7 +610,8 @@ void triggerI2C(byte deviceID, byte eventID) {
       //Open All Pies
       maestrodome.restartScript(3);
       mp3Trigger.play(1);
-      maestrobody.restartScript(0);   
+      maestrobody.restartScript(0);
+      Serial3.print(":SE01\r");   
     }
      if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
     Xbox.getChatpadClick(XBOX_CHATPAD_S,0)) {
@@ -697,6 +684,14 @@ void triggerI2C(byte deviceID, byte eventID) {
     if (Xbox.getChatpadClick(XBOX_CHATPAD_J, 0))  {
       //All Doors Close
       maestrobody.restartScript(0);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_O, 0))  {
+      //Front Holo On
+      Serial3.print(":*ON01\r");
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_L, 0))  {
+      //Front Holo Off
+      Serial3.print(":*OF01\r");
 }
     }
  
