@@ -51,19 +51,19 @@ const byte RAMPING = 3;
 const byte DOMEDEADZONERANGE = 20;
 const byte DRIVEDEADZONERANGE = 20;
 
-// Set the baude rate for the Sabertooth motor controller (feet)
+// Set the baud rate for the Sabertooth motor controller (feet)
 // 9600 is the default baud rate for Sabertooth packet serial.
 // for packetized options are: 2400, 9600, 19200 and 38400. I think you need to pick one that works
 // and I think it varies across different firmware versions.
 const int SABERTOOTHBAUDRATE = 9600;
 
-// Set the baude rate for the Syren motor controller (dome)
+// Set the baud rate for the Syren motor controller (dome)
 // for packetized options are: 2400, 9600, 19200 and 38400. I think you need to pick one that works
 // and I think it varies across different firmware versions.
 const int DOMEBAUDRATE = 9600;
 
-// Set the baude rate for AstroPixels Plus
-const int MARCDUINOBAUDRATE = 9600;
+// Set the baud rate for AstroPixels Plus
+const int MARCDUINOBAUDRATE = 2400;
 
 // Default sound volume at startup
 // 0 = full volume, 255 off
@@ -72,24 +72,14 @@ byte vol = 50;
 
 // Automation Delays
 // set automateDelay to min and max seconds between sounds
-byte automateDelay = random(8,25 ); 
+byte automateDelay = random(5,15 ); 
 //How much the dome may turn during automation.
 int turnDirection = 55;
-
-// Pin number to pull a relay high/low to trigger my upside down compressed air like R2's extinguisher
-#define EXTINGUISHERPIN 3
 
 #include <Sabertooth.h>
 #include <MP3Trigger.h>
 #include <Wire.h>
 #include <XBOXRECV.h>
-#include <ReelTwo.h>
-#include <dome/Logics.h>
-#include <dome/LogicEngineController.h>
-#include <dome/HoloLights.h>
-#include <dome/NeoPSI.h>
-#include <i2c/I2CReceiver.h>
-
 
 /////////////////////////////////////////////////////////////////
 Sabertooth Sabertooth2x(128, Serial1);
@@ -188,9 +178,6 @@ void setup() {
 
   Sabertooth2x.setTimeout(950);
   Syren10.setTimeout(950);
-
-  pinMode(EXTINGUISHERPIN, OUTPUT);
-  digitalWrite(EXTINGUISHERPIN, HIGH);
 
   mp3Trigger.setup();
   mp3Trigger.setVolume(vol);
@@ -356,21 +343,7 @@ void loop() {
   }
 
 
-  //FIRE EXTINGUISHER
-  // When holding L2-UP, extinguisher is spraying. WHen released, stop spraying
-
-  // TODO: ADD SERVO DOOR OPEN FIRST. ONLY ALLOW EXTINGUISHER ONCE IT'S SET TO 'OPENED'
-  // THEN CLOSE THE SERVO DOOR
-  if (Xbox.getButtonPress(L1, 0)) {
-    if (Xbox.getButtonPress(UP, 0)) {
-      digitalWrite(EXTINGUISHERPIN, LOW);
-    } else {
-      digitalWrite(EXTINGUISHERPIN, HIGH);
-    }
-  }
-
-
-  
+ 
   
 #if defined(CHATPAD)
   Check_Chatpad();
@@ -382,19 +355,19 @@ void loop() {
     if (Xbox.getButtonPress(L1, 0)) {
       mp3Trigger.play(8);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     } else if (Xbox.getButtonPress(L2, 0)) {
       mp3Trigger.play(8);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     } else if (Xbox.getButtonPress(R1, 0)) {
       mp3Trigger.play(9);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     } else {
       mp3Trigger.play(random(13, 17));
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     }
   }
 
@@ -403,27 +376,27 @@ void loop() {
     if (Xbox.getButtonPress(L1, 0)) {
       mp3Trigger.play(6);
       //logic lights
-      triggerI2C(10, 6);
+      //triggerI2C(10, 6);
       // HPEvent 11 - SystemFailure - I2C
-      triggerI2C(25, 11);
-      triggerI2C(26, 11);
-      triggerI2C(27, 11);
+      //triggerI2C(25, 11);
+      //triggerI2C(26, 11);
+      //triggerI2C(27, 11);
     } else if (Xbox.getButtonPress(L2, 0)) {
       mp3Trigger.play(8);
       //logic lights, alarm
-      triggerI2C(10, 1);
+      //triggerI2C(10, 1);
       //  HPEvent 3 - alarm - I2C
-      triggerI2C(25, 3);
-      triggerI2C(26, 3);
-      triggerI2C(27, 3);
+      //triggerI2C(25, 3);
+      //triggerI2C(26, 3);
+      //triggerI2C(27, 3);
     } else if (Xbox.getButtonPress(R1, 0)) {
       mp3Trigger.play(11);
       //logic lights, alarm2Display
-      triggerI2C(10, 11);
+      //triggerI2C(10, 11);
     } else {
       mp3Trigger.play(random(17, 25));
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     }
   }
 
@@ -432,23 +405,23 @@ void loop() {
     if (Xbox.getButtonPress(L1, 0)) {
       mp3Trigger.play(7);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     } else if (Xbox.getButtonPress(L2, 0)) {
       mp3Trigger.play(32);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     } else if (Xbox.getButtonPress(R1, 0)) {
       mp3Trigger.play(10);
       //logic lights bargrap
-      triggerI2C(10, 10);
+      //triggerI2C(10, 10);
       // HPEvent 1 - Disco - I2C
-      triggerI2C(25, 10);
-      triggerI2C(26, 10);
-      triggerI2C(27, 10);
+      //triggerI2C(25, 10);
+      //triggerI2C(26, 10);
+      //triggerI2C(27, 10);
     } else {
       mp3Trigger.play(random(3, 9));
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     }
   }
 
@@ -458,22 +431,22 @@ void loop() {
     if (Xbox.getButtonPress(L1, 0)) {
       mp3Trigger.play(5);
       //logic lights, leia message
-      triggerI2C(10, 5);
+      //triggerI2C(10, 5);
       // Front HPEvent 1 - HoloMessage - I2C -leia message
-      triggerI2C(25, 9);
+      //triggerI2C(25, 9);
        
     } else if (Xbox.getButtonPress(L2, 0)) {
       mp3Trigger.play(4);
       //logic lights
-      triggerI2C(10, 4);
+      //triggerI2C(10, 4);
     } else if (Xbox.getButtonPress(R1, 0)) {
       mp3Trigger.play(12);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     } else {
       mp3Trigger.play(random(9, 22));
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
     }
   }
 
@@ -506,20 +479,20 @@ void loop() {
       drivespeed = DRIVESPEED2;
       Xbox.setLedOn(LED2, 0);
       mp3Trigger.play(53);
-      triggerI2C(10, 22);
+      //triggerI2C(10, 22);
     } else if (drivespeed == DRIVESPEED2 && (DRIVESPEED3 != 0)) {
       //change to high speed and play sound scream
       drivespeed = DRIVESPEED3;
       Xbox.setLedOn(LED3, 0);
       mp3Trigger.play(1);
-      triggerI2C(10, 23);
+      //triggerI2C(10, 23);
     } else {
       //we must be in high speed
       //change to low speed and play sound 2-tone
       drivespeed = DRIVESPEED1;
       Xbox.setLedOn(LED1, 0);
       mp3Trigger.play(52);
-      triggerI2C(10, 21);
+      //triggerI2C(10, 21);
     }
   }
 
@@ -588,7 +561,7 @@ void triggerI2C(byte deviceID, byte eventID) {
     if (Xbox.getChatpadClick(XBOX_CHATPAD_D1, 0)) {
      mp3Trigger.play(8);
       //logic lights, random
-      triggerI2C(10, 0);
+      //triggerI2C(10, 0);
 }
      if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
     Xbox.getChatpadClick(XBOX_CHATPAD_A,0)) {
