@@ -2,7 +2,7 @@
 // /////////////////////////Padawan360 Body Code - Mega I2C v2.0 ////////////////////////////////////
 // =======================================================================================
 /*
-//               Base Chatpad with 2 MAESTROS code for R2D2
+//                     Base Chatpad with 2 MAESTROS code for R2D2
 //                     Coding done By DEREK KASTNING/JUSTIN HALL
 
 */
@@ -72,7 +72,7 @@ byte vol = 50;
 
 // Automation Delays
 // set automateDelay to min and max seconds between sounds
-byte automateDelay = random(5,15 ); 
+byte automateDelay = random(5, 15); 
 //How much the dome may turn during automation.
 int turnDirection = 55;
 
@@ -80,6 +80,7 @@ int turnDirection = 55;
 #include <MP3Trigger.h>
 #include <Wire.h>
 #include <XBOXRECV.h>
+#include <Chatpad.h>
 
 /////////////////////////////////////////////////////////////////
 Sabertooth Sabertooth2x(128, Serial1);
@@ -266,7 +267,7 @@ void loop() {
       mp3Trigger.play(30);
     } else {
       isInAutomationMode = true;
-      mp3Trigger.play(2);
+      mp3Trigger.play(52);
     }
   }
 
@@ -274,7 +275,7 @@ void loop() {
   if (isInAutomationMode) {
     unsigned long currentMillis = millis();
 
-    if (currentMillis - automateMillis > (automateDelay * 300)) {
+    if (currentMillis - automateMillis > (automateDelay * 1000)) {
       automateMillis = millis();
       automateAction = random(1, 5);
 
@@ -304,7 +305,7 @@ void loop() {
       }
 
       // sets the mix, max seconds between automation actions - sounds and dome movement
-      automateDelay = random(30,120);
+      automateDelay = random(3,10);
     }
   }
 
@@ -559,56 +560,44 @@ void triggerI2C(byte deviceID, byte eventID) {
 //the way you want them
  
     if (Xbox.getChatpadClick(XBOX_CHATPAD_D1, 0)) {
-     mp3Trigger.play(8);
-      //logic lights, random
-      //triggerI2C(10, 0);
+      //All Pies Open
+     maestrodome.restartScript(5); 
 }
-     if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_A,0)) {
-      //All HP Movement
-      maestrodome.restartScript(0);
-    }
-     if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_W,0)) {
-      //FHP Movement
-      maestrodome.restartScript(1);
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D2, 0)) {
+      //All Pies Close
+     maestrodome.restartScript(4); 
 }
-      if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_Q,0)) {
-      //Close All Pies
-      maestrodome.restartScript(2);
-    }
-     if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_E,0)) {
-      //Open All Pies
-      maestrodome.restartScript(3);
-      mp3Trigger.play(1);
-      maestrobody.restartScript(0);
-      Serial3.print(":SE01\r");   
-    }
-     if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_S,0)) {
-      //Cascade All Pies
-      maestrodome.restartScript(4);
-    }
-     if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_P,0)) {
-      //RHP Movement
-      maestrodome.restartScript(5);
-    }
-    if(Xbox.getChatpadModifier(MODIFIER_ORANGEBUTTON, 0) &&
-    Xbox.getChatpadClick(XBOX_CHATPAD_D,0)) {
-      //THP Movement
-      maestrodome.restartScript(6);
-    }
-     
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D3, 0)) {
+      //All Pies Cascade
+     maestrodome.restartScript(3); 
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D7, 0)) {
+      //All HP Twitch
+     maestrodome.restartScript(0); 
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D5, 0)) {
+      //THP Twitch
+     maestrodome.restartScript(7); 
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D4, 0)) {
+      //FHP Twitch
+     maestrodome.restartScript(1); 
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D6, 0)) {
+      //RHP Twitch
+     maestrodome.restartScript(6); 
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D8, 0)) {
+      //Front Pies open
+     maestrodome.restartScript(2); 
+}
       if (Xbox.getChatpadClick(XBOX_CHATPAD_Q, 0))  {
       // Top Utility Arm Open
-      maestrobody.restartScript(19);
+      maestrobody.restartScript(31);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_A, 0))  {
       // Top Utility Arm Close
-      maestrobody.restartScript(18);
+      maestrobody.restartScript(30);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_W, 0))  {
       // Bottom Utility Arm Open
@@ -620,35 +609,35 @@ void triggerI2C(byte deviceID, byte eventID) {
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_E, 0))  {
       //Left Door Open
-      maestrobody.restartScript(13);
+      maestrobody.restartScript(28);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_D, 0))  {
-      //Left Door Cloe
-      maestrobody.restartScript(12);
+      //Left Door Close
+      maestrobody.restartScript(27);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_R, 0))  {
       //Right Door Open
-      maestrobody.restartScript(16);
+      maestrobody.restartScript(25);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_F, 0))  {
       // Right Door Close
-      maestrobody.restartScript(15);
+      maestrobody.restartScript(24);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_T, 0))  {
       //Charge Bay Open
-      maestrobody.restartScript(7);
+      maestrobody.restartScript(11);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_G, 0))  {
       //Charge Bay Close
-      maestrobody.restartScript(6);
+      maestrobody.restartScript(10);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_Y, 0))  {
       //Data Port Door Open
-      maestrobody.restartScript(10);
+      maestrobody.restartScript(14);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_H, 0))  {
       //Data Port Door Close
-      maestrobody.restartScript(9);
+      maestrobody.restartScript(13);
 }
     if (Xbox.getChatpadClick(XBOX_CHATPAD_U, 0))  {
       //All Doors Open
@@ -658,13 +647,42 @@ void triggerI2C(byte deviceID, byte eventID) {
       //All Doors Close
       maestrobody.restartScript(0);
 }
-    if (Xbox.getChatpadClick(XBOX_CHATPAD_O, 0))  {
-      //Front Holo On
-      Serial3.print(":*ON01\r");
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_Z, 0))  {
+      //Both Arms Open
+      maestrobody.restartScript(2);
 }
-    if (Xbox.getChatpadClick(XBOX_CHATPAD_L, 0))  {
-      //Front Holo Off
-      Serial3.print(":*OF01\r");
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_X, 0))  {
+      //IA Open Raise Spin Close
+      maestrobody.restartScript(23);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_I, 0))  {
+      //Buzz Saw Door Open
+      maestrobody.restartScript(7);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_K, 0))  {
+      //Buzz Saw Door Close
+      maestrobody.restartScript(6);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_M, 0))  {
+      //Buzz Saw Door Open Ext Spin Close
+      maestrobody.restartScript(8);
+      mp3Trigger.play(60);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_C, 0))  {
+      //GA Open Raise Pinch Close
+      maestrobody.restartScript(16);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_D9, 0))  {
+      //Trading Card Dispense
+      maestrobody.restartScript(33);
+}
+    if (Xbox.getButtonClick(R2, 0))  {
+      //Wave front pies
+      maestrodome.restartScript(2);
+}
+    if (Xbox.getChatpadClick(XBOX_CHATPAD_P, 0))  {
+      //Scream
+      mp3Trigger.play(1);
 }
     }
  
