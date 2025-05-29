@@ -1,0 +1,377 @@
+
+### Sequence subroutines: ###
+
+# All Doors Close
+sub All_Doors_Close
+  500 5142 6512 8939 8699 5024 4672 
+  0 0 0 0 3968 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  3000 6355 9722 5455 3968 7784 9448 
+  6003 frame_0..5_10 # Frame 1
+  500 0 0 0 0 0 0 
+  0 frame_0..5_10 # Frame 2
+  quit
+# All Doors Open
+sub All_Doors_Open
+  500 6003 9761 5729 3968 6160 8587 
+  0 0 0 0 5690 0 
+  0 8000 0 0 0 0 frame_0..17 # Servos On
+  1500 5142 6512 8939 8699 5024 4672 
+  3968 frame_0..5_10 # Doors Open
+  500 0 0 0 0 0 0 
+  0 frame_0..5_10 # Servos Off
+  quit
+# Both Arms Open Close
+sub Both_Arms_Open_Close
+  500 6062 0 0 0 5944 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  2000 5435 5122 frame_0_4 # Frame 1
+  500 0 0 frame_0_4 # Frame 2
+  2100 6414 6512 frame_0_4 # Frame 3
+  500 0 0 frame_0_4 # Frame 4
+  quit
+# Bottom Arm Close
+sub Bottom_Arm_Close
+  500 0 0 0 0 4711 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  1300 6864 frame_4 # Frame 1
+  500 0 frame_4 # Frame 2
+  quit
+# Bottom Arm Open
+sub Bottom_Arm_Open
+  500 0 0 0 0 5925 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  1300 4711 frame_4 # Frame 1
+  500 0 frame_4 # Frame 2
+  quit
+# Bottom Arm Open Close
+sub Bottom_Arm_Open_Close
+  quit
+# Buzz Saw Door Close
+sub Buzz_Saw_Door_Close
+  500 0 0 0 0 0 0 
+  0 0 0 0 3968 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 5729 frame_10 # Frame 1
+  500 0 frame_10 # Frame 2
+  quit
+# Buzz Saw Door Open
+sub Buzz_Saw_Door_Open
+  500 0 0 0 0 0 0 
+  0 0 0 0 5709 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 3968 frame_10 # Frame 1
+  500 0 frame_10 # Frame 2
+  quit
+# Buzz Saw Open Ext Spin Close
+sub Buzz_Saw_Open_Ext_Spin_Close
+  500 0 0 0 0 0 0 
+  0 0 0 0 5729 0 
+  0 0 0 0 0 0 frame_0..17 # BSDoorServoOn
+  500 3968 frame_10 # BSDoorOpen
+  500 0 6000 frame_10_11 # BSArmOn
+  1800 3968 frame_11 # BSArmExtend
+  500 0 frame_11 # BSArmoff
+  1800 6000 frame_17 # Frame 5
+  12000 0 frame_17 # Frame 6
+  500 3968 frame_11 # Frame 7
+  1700 7804 frame_11 # Frame 8
+  500 0 frame_11 # Frame 9
+  500 3968 frame_10 # Frame 10
+  500 5846 frame_10 # Frame 11
+  500 0 frame_10 # Frame 12
+  quit
+# Buzz Saw Retract Close
+sub Buzz_Saw_Retract_Close
+  quit
+# Sequence 10 - CBDoor Close
+sub Sequence_10__CBDoor_Close
+  500 0 0 0 0 0 4476 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 9135 frame_5 # Frame 1
+  500 0 frame_5 # Frame 2
+  quit
+# Sequence 11 - CB Door Open
+sub Sequence_11__CB_Door_Open
+  500 0 0 0 0 0 8391 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 4476 frame_5 # Frame 1
+  500 0 frame_5 # Frame 2
+  quit
+# Sequence 12 - CBDoorOpenClose
+sub Sequence_12__CBDoorOpenClose
+  quit
+# Sequence 13 - DPDoorClose
+sub Sequence_13__DPDoorClose
+  500 0 0 0 8114 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 3968 frame_3 # Frame 1
+  500 0 frame_3 # Frame 2
+  quit
+# Sequence 14 - DPDoorOpen
+sub Sequence_14__DPDoorOpen
+  500 0 0 0 3968 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 8114 frame_3 # Frame 1
+  500 0 frame_3 # Frame 2
+  quit
+# Sequence 15 - DPDoorOpenClose
+sub Sequence_15__DPDoorOpenClose
+  quit
+# Sequence 16 - GAOpenRaisePinchClose
+sub Sequence_16__GAOpenRaisePinchClose
+  500 0 0 5612 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 8704 frame_2 # Frame 1
+  500 0 frame_2 # Frame 2
+  500 5220 frame_8 # Frame 3
+  500 6000 frame_9 # Frame 4
+  500 4379 frame_9 # Frame 5
+  500 7941 frame_9 # Frame 6
+  500 3968 frame_9 # Frame 7
+  500 7882 frame_9 # Frame 8
+  500 4105 frame_9 # Frame 9
+  500 7941 frame_9 # Frame 10
+  500 4065 frame_9 # Frame 11
+  500 7882 frame_9 # Frame 12
+  500 4046 frame_9 # Frame 13
+  500 0 frame_9 # Frame 14
+  500 7960 frame_8 # Frame 15
+  500 0 frame_8 # Frame 16
+  500 8704 frame_2 # Frame 17
+  500 5103 frame_2 # Frame 18
+  500 0 frame_2 # Frame 19
+  quit
+# Sequence 17 - GADoorClose
+sub Sequence_17__GADoorClose
+  quit
+# Sequence 18 - GAPinch
+sub Sequence_18__GAPinch
+  quit
+# Sequence 19 - GARaise
+sub Sequence_19__GARaise
+  quit
+# Sequence 20 - IADoorClose
+sub Sequence_20__IADoorClose
+  quit
+# Sequence 21 - IARaise
+sub Sequence_21__IARaise
+  quit
+# Sequence 22 - IASpin
+sub Sequence_22__IASpin
+  quit
+# Sequence 23 - IAOpenRaiseSpinClose
+sub Sequence_23__IAOpenRaiseSpinClose
+  500 0 9839 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 5886 frame_1 # Frame 1
+  500 0 5259 frame_1_6 # Frame 2
+  500 8000 frame_6 # Frame 3
+  500 10231 frame_7 # Frame 4
+  500 3968 frame_7 # Frame 5
+  500 9683 frame_7 # Frame 6
+  500 4555 frame_7 # Frame 7
+  500 9291 frame_7 # Frame 8
+  500 6042 frame_7 # Frame 9
+  500 10348 frame_7 # Frame 10
+  500 0 frame_7 # Frame 11
+  500 5122 frame_6 # Frame 12
+  250 0 frame_6 # Frame 13
+  250 5886 frame_1 # Frame 14
+  250 9996 frame_1 # Frame 15
+  500 0 frame_1 # Frame 16
+  quit
+# Sequence 24 - IADoorClose
+sub Sequence_24__IADoorClose
+  500 0 6277 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 9839 frame_1 # Frame 1
+  500 0 frame_1 # Frame 2
+  quit
+# Sequence 25 - IADoorOpen
+sub Sequence_25__IADoorOpen
+  500 0 10466 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 6277 frame_1 # Frame 1
+  500 0 frame_1 # Frame 2
+  quit
+# Sequence 26 - IADoorOpenClose
+sub Sequence_26__IADoorOpenClose
+  quit
+# Sequence 27 - GADoorClose
+sub Sequence_27__GADoorClose
+  500 0 0 9017 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 4320 frame_2 # Frame 1
+  500 0 frame_2 # Frame 2
+  quit
+# Sequence 28 - GADoorOpen
+sub Sequence_28__GADoorOpen
+  500 0 0 6238 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 9017 frame_2 # Frame 1
+  500 0 frame_2 # Frame 2
+  quit
+# Sequence 29 - GADoorOpenClose
+sub Sequence_29__GADoorOpenClose
+  quit
+# Sequence 30 - TopArmClose
+sub Sequence_30__TopArmClose
+  500 5279 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  2500 6395 frame_0 # Frame 1
+  500 0 frame_0 # Frame 2
+  quit
+# Sequence 31 - TopArmOpen
+sub Sequence_31__TopArmOpen
+  500 5846 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  2000 5279 frame_0 # Frame 1
+  500 0 frame_0 # Frame 2
+  quit
+# Sequence 32 - TopArmOpenClose
+sub Sequence_32__TopArmOpenClose
+  quit
+# Sequence 33 - TCDActivate
+sub Sequence_33__TCDActivate
+  1200 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 6000 0 frame_0..17 # Frame 0
+  500 0 frame_16 # Frame 1
+  quit
+
+sub frame_0..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  12 servo
+  11 servo
+  10 servo
+  9 servo
+  8 servo
+  7 servo
+  6 servo
+  5 servo
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0..5_10
+  10 servo
+  5 servo
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0_4
+  4 servo
+  0 servo
+  delay
+  return
+
+sub frame_4
+  4 servo
+  delay
+  return
+
+sub frame_10
+  10 servo
+  delay
+  return
+
+sub frame_10_11
+  11 servo
+  10 servo
+  delay
+  return
+
+sub frame_11
+  11 servo
+  delay
+  return
+
+sub frame_17
+  17 servo
+  delay
+  return
+
+sub frame_5
+  5 servo
+  delay
+  return
+
+sub frame_3
+  3 servo
+  delay
+  return
+
+sub frame_2
+  2 servo
+  delay
+  return
+
+sub frame_8
+  8 servo
+  delay
+  return
+
+sub frame_9
+  9 servo
+  delay
+  return
+
+sub frame_1
+  1 servo
+  delay
+  return
+
+sub frame_1_6
+  6 servo
+  1 servo
+  delay
+  return
+
+sub frame_6
+  6 servo
+  delay
+  return
+
+sub frame_7
+  7 servo
+  delay
+  return
+
+sub frame_0
+  0 servo
+  delay
+  return
+
+sub frame_16
+  16 servo
+  delay
+  return
