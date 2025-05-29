@@ -1,0 +1,265 @@
+
+### Sequence subroutines: ###
+
+# All HP Twitch
+sub All_HP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  6101 3968 4436 6000 4418 6708 frame_0..17 # Frame 0
+  500 6962 3968 7784 frame_13_15_16 # Frame 1
+  500 4692 8000 4907 3968 frame_13_15..17 # Frame 2
+  500 7588 6825 5044 7158 6806 frame_13..17 # Frame 3
+  500 4222 4436 4672 frame_12_14_16 # Frame 4
+  500 0 0 0 0 0 0 frame_12..17 # Frame 5
+  quit
+# FHP Twitch
+sub FHP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  4848 7177 0 0 0 0 frame_0..17 # Frame 0
+  500 4555 frame_13 # Frame 1
+  500 7177 frame_13 # Frame 2
+  500 3968 frame_13 # Frame 3
+  500 6708 frame_13 # Frame 4
+  500 4476 frame_13 # Frame 5
+  500 0 0 frame_12_13 # Frame 6
+  quit
+# Front Pies
+sub Front_Pies
+  500 0 0 7445 9984 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 3082 3925 frame_2_3 # Frame 1
+  500 0 0 frame_2_3 # Frame 2
+  quit
+# Pie Cascade
+sub Pie_Cascade
+  100 5855 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  100 6816 frame_1 # Frame 1
+  100 7149 frame_2 # Frame 2
+  100 9424 frame_3 # Frame 3
+  100 7902 frame_4 # Frame 4
+  100 4183 frame_4 # Frame 5
+  100 5556 0 frame_3_4 # Frame 6
+  100 4302 0 frame_2_3 # Frame 7
+  100 3267 0 frame_1_2 # Frame 8
+  100 2417 0 frame_0_1 # Frame 9
+  100 0 frame_0 # Frame 10
+  100 5855 frame_0 # Frame 0
+  100 6816 frame_1 # Frame 1
+  100 7149 frame_2 # Frame 2
+  100 9424 frame_3 # Frame 3
+  100 7902 frame_4 # Frame 4
+  100 4183 frame_4 # Frame 5
+  100 5556 0 frame_3_4 # Frame 6
+  100 4302 0 frame_2_3 # Frame 7
+  100 3267 0 frame_1_2 # Frame 8
+  100 2417 0 frame_0_1 # Frame 9
+  100 0 frame_0 # Frame 10
+  quit
+# Pie Close
+sub Pie_Close
+  500 3008 3082 3230 3879 4046 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 0 0 0 0 0 frame_0..4 # Frame 1
+  quit
+# Pie Open
+sub Pie_Open
+  500 6595 7186 7741 9984 8000 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 0 0 0 0 0 frame_0..4 # Frame 1
+  quit
+# RHP Twitch
+sub RHP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 6709 0 0 0 frame_0..17 # Frame 0
+  500 3968 frame_15 # Frame 1
+  500 7334 frame_15 # Frame 2
+  500 4975 4065 frame_14_15 # Frame 3
+  500 6902 frame_14 # Frame 4
+  500 6434 frame_15 # Frame 5
+  500 5322 frame_14 # Frame 6
+  500 0 0 frame_14_15 # Frame 7
+  quit
+# THP Twitch
+sub THP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 6414 5572 frame_0..17 # Frame 0
+  500 7902 frame_16 # Frame 1
+  500 7412 frame_17 # Frame 2
+  500 4574 3968 frame_16_17 # Frame 3
+  500 5964 6708 frame_16_17 # Frame 4
+  500 7843 frame_16 # Frame 5
+  500 6806 frame_16 # Frame 6
+  500 0 0 frame_16_17 # Frame 7
+  quit
+
+sub frame_0..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  12 servo
+  11 servo
+  10 servo
+  9 servo
+  8 servo
+  7 servo
+  6 servo
+  5 servo
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_13_15_16
+  16 servo
+  15 servo
+  13 servo
+  delay
+  return
+
+sub frame_13_15..17
+  17 servo
+  16 servo
+  15 servo
+  13 servo
+  delay
+  return
+
+sub frame_13..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  delay
+  return
+
+sub frame_12_14_16
+  16 servo
+  14 servo
+  12 servo
+  delay
+  return
+
+sub frame_12..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  12 servo
+  delay
+  return
+
+sub frame_13
+  13 servo
+  delay
+  return
+
+sub frame_12_13
+  13 servo
+  12 servo
+  delay
+  return
+
+sub frame_2_3
+  3 servo
+  2 servo
+  delay
+  return
+
+sub frame_1
+  1 servo
+  delay
+  return
+
+sub frame_2
+  2 servo
+  delay
+  return
+
+sub frame_3
+  3 servo
+  delay
+  return
+
+sub frame_4
+  4 servo
+  delay
+  return
+
+sub frame_3_4
+  4 servo
+  3 servo
+  delay
+  return
+
+sub frame_1_2
+  2 servo
+  1 servo
+  delay
+  return
+
+sub frame_0_1
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0
+  0 servo
+  delay
+  return
+
+sub frame_0..4
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_15
+  15 servo
+  delay
+  return
+
+sub frame_14_15
+  15 servo
+  14 servo
+  delay
+  return
+
+sub frame_14
+  14 servo
+  delay
+  return
+
+sub frame_16
+  16 servo
+  delay
+  return
+
+sub frame_17
+  17 servo
+  delay
+  return
+
+sub frame_16_17
+  17 servo
+  16 servo
+  delay
+  return
