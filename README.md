@@ -3,6 +3,8 @@ The current build is a Baddeley Mk3 body with a V2 dome. I am using Padawan 360 
 I am using Astropixels for lights/logics in the dome, and the body lights are from printed droid shop.
 
 Current Features -
+
+
     Dome -
       Pie Panels open/close
       HP/Logic/PSI Lights (Astropixels)
