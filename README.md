@@ -16,3 +16,4 @@ Current Features -
       Gripper Arm/Interface Arm raises up/down/opens/closes/spins
       Buzz Saw
       Trading Card Dispenser
+      Hinged Electronics Board
