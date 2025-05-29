@@ -1,0 +1,390 @@
+<!--Pololu Maestro servo controller settings file, http://www.pololu.com/catalog/product/1350-->
+<UscSettings version="1">
+  <NeverSuspend>false</NeverSuspend>
+  <SerialMode>UART_FIXED_BAUD_RATE</SerialMode>
+  <FixedBaudRate>9600</FixedBaudRate>
+  <SerialTimeout>0</SerialTimeout>
+  <EnableCrc>false</EnableCrc>
+  <SerialDeviceNumber>12</SerialDeviceNumber>
+  <SerialMiniSscOffset>0</SerialMiniSscOffset>
+  <Channels MiniMaestroServoPeriod="80000" ServoMultiplier="1">
+    <!--Period = 20 ms-->
+    <!--Channel 0-->
+    <Channel name="Pie 1" mode="Servo" min="384" max="8000" homemode="Off" home="384" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 1-->
+    <Channel name="Pie 2" mode="Servo" min="384" max="8000" homemode="Off" home="384" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 2-->
+    <Channel name="Pie 3" mode="Servo" min="384" max="8000" homemode="Off" home="384" speed="0" acceleration="0" neutral="8000" range="1905" />
+    <!--Channel 3-->
+    <Channel name="Pie 4" mode="Servo" min="384" max="9984" homemode="Off" home="384" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 4-->
+    <Channel name="Pie 5" mode="Servo" min="3968" max="8000" homemode="Ignore" home="3968" speed="0" acceleration="0" neutral="3968" range="1905" />
+    <!--Channel 5-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 6-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 7-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 8-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 9-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 10-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 11-->
+    <Channel name="" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 12-->
+    <Channel name="FHP" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 13-->
+    <Channel name="FHP 2" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 14-->
+    <Channel name="RHP" mode="Servo" min="4032" max="8000" homemode="Off" home="4032" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 15-->
+    <Channel name="RHP 2" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 16-->
+    <Channel name="THP" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+    <!--Channel 17-->
+    <Channel name="THP 2" mode="Servo" min="3968" max="8000" homemode="Off" home="3968" speed="0" acceleration="0" neutral="6000" range="1905" />
+  </Channels>
+  <Sequences>
+    <Sequence name="All HP Twitch" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 6101 3968 4436 6000 4418 6708 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 6101 6962 4436 3968 7784 6708 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 6101 4692 4436 8000 4907 3968 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 6101 7588 6825 5044 7158 6806 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4222 7588 4436 5044 4672 6806 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="FHP Twitch" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4848 7177 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4848 4555 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4848 7177 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4848 3968 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4848 6708 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 4848 4476 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="Front Pies" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">0 0 7445 9984 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 3082 3925 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="Pie Cascade" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="100">5855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="100">5855 6816 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="100">5855 6816 7149 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="100">5855 6816 7149 9424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="100">5855 6816 7149 9424 7902 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="100">5855 6816 7149 9424 4183 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="100">5855 6816 7149 5556 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="100">5855 6816 4302 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="100">5855 3267 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="100">2417 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="100">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 0" duration="100">5855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="100">5855 6816 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="100">5855 6816 7149 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="100">5855 6816 7149 9424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="100">5855 6816 7149 9424 7902 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="100">5855 6816 7149 9424 4183 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="100">5855 6816 7149 5556 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="100">5855 6816 4302 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 8" duration="100">5855 3267 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 9" duration="100">2417 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 10" duration="100">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="Pie Close" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">3008 3082 3230 3879 4046 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="Pie Open" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">6595 7186 7741 9984 8000 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="RHP Twitch" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 6709 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 6709 3968 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 6709 7334 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 4975 4065 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 6902 4065 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 6902 6434 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 5322 6434 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+    <Sequence name="THP Twitch" useSpeedAndAcceleration="false">
+      <Frame name="Frame 0" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6414 5572 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 1" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7902 5572 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 2" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7902 7412 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 3" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4574 3968 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 4" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5964 6708 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 5" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7843 6708 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 6" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6806 6708 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+      <Frame name="Frame 7" duration="500">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 s 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</Frame>
+    </Sequence>
+  </Sequences>
+  <Script ScriptDone="true">
+### Sequence subroutines: ###
+
+# All HP Twitch
+sub All_HP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  6101 3968 4436 6000 4418 6708 frame_0..17 # Frame 0
+  500 6962 3968 7784 frame_13_15_16 # Frame 1
+  500 4692 8000 4907 3968 frame_13_15..17 # Frame 2
+  500 7588 6825 5044 7158 6806 frame_13..17 # Frame 3
+  500 4222 4436 4672 frame_12_14_16 # Frame 4
+  500 0 0 0 0 0 0 frame_12..17 # Frame 5
+  quit
+# FHP Twitch
+sub FHP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  4848 7177 0 0 0 0 frame_0..17 # Frame 0
+  500 4555 frame_13 # Frame 1
+  500 7177 frame_13 # Frame 2
+  500 3968 frame_13 # Frame 3
+  500 6708 frame_13 # Frame 4
+  500 4476 frame_13 # Frame 5
+  500 0 0 frame_12_13 # Frame 6
+  quit
+# Front Pies
+sub Front_Pies
+  500 0 0 7445 9984 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 3082 3925 frame_2_3 # Frame 1
+  500 0 0 frame_2_3 # Frame 2
+  quit
+# Pie Cascade
+sub Pie_Cascade
+  100 5855 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  100 6816 frame_1 # Frame 1
+  100 7149 frame_2 # Frame 2
+  100 9424 frame_3 # Frame 3
+  100 7902 frame_4 # Frame 4
+  100 4183 frame_4 # Frame 5
+  100 5556 0 frame_3_4 # Frame 6
+  100 4302 0 frame_2_3 # Frame 7
+  100 3267 0 frame_1_2 # Frame 8
+  100 2417 0 frame_0_1 # Frame 9
+  100 0 frame_0 # Frame 10
+  100 5855 frame_0 # Frame 0
+  100 6816 frame_1 # Frame 1
+  100 7149 frame_2 # Frame 2
+  100 9424 frame_3 # Frame 3
+  100 7902 frame_4 # Frame 4
+  100 4183 frame_4 # Frame 5
+  100 5556 0 frame_3_4 # Frame 6
+  100 4302 0 frame_2_3 # Frame 7
+  100 3267 0 frame_1_2 # Frame 8
+  100 2417 0 frame_0_1 # Frame 9
+  100 0 frame_0 # Frame 10
+  quit
+# Pie Close
+sub Pie_Close
+  500 3008 3082 3230 3879 4046 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 0 0 0 0 0 frame_0..4 # Frame 1
+  quit
+# Pie Open
+sub Pie_Open
+  500 6595 7186 7741 9984 8000 0 
+  0 0 0 0 0 0 
+  0 0 0 0 0 0 frame_0..17 # Frame 0
+  500 0 0 0 0 0 frame_0..4 # Frame 1
+  quit
+# RHP Twitch
+sub RHP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 6709 0 0 0 frame_0..17 # Frame 0
+  500 3968 frame_15 # Frame 1
+  500 7334 frame_15 # Frame 2
+  500 4975 4065 frame_14_15 # Frame 3
+  500 6902 frame_14 # Frame 4
+  500 6434 frame_15 # Frame 5
+  500 5322 frame_14 # Frame 6
+  500 0 0 frame_14_15 # Frame 7
+  quit
+# THP Twitch
+sub THP_Twitch
+  500 0 0 0 0 0 0 
+  0 0 0 0 0 0 
+  0 0 0 0 6414 5572 frame_0..17 # Frame 0
+  500 7902 frame_16 # Frame 1
+  500 7412 frame_17 # Frame 2
+  500 4574 3968 frame_16_17 # Frame 3
+  500 5964 6708 frame_16_17 # Frame 4
+  500 7843 frame_16 # Frame 5
+  500 6806 frame_16 # Frame 6
+  500 0 0 frame_16_17 # Frame 7
+  quit
+
+sub frame_0..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  12 servo
+  11 servo
+  10 servo
+  9 servo
+  8 servo
+  7 servo
+  6 servo
+  5 servo
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_13_15_16
+  16 servo
+  15 servo
+  13 servo
+  delay
+  return
+
+sub frame_13_15..17
+  17 servo
+  16 servo
+  15 servo
+  13 servo
+  delay
+  return
+
+sub frame_13..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  delay
+  return
+
+sub frame_12_14_16
+  16 servo
+  14 servo
+  12 servo
+  delay
+  return
+
+sub frame_12..17
+  17 servo
+  16 servo
+  15 servo
+  14 servo
+  13 servo
+  12 servo
+  delay
+  return
+
+sub frame_13
+  13 servo
+  delay
+  return
+
+sub frame_12_13
+  13 servo
+  12 servo
+  delay
+  return
+
+sub frame_2_3
+  3 servo
+  2 servo
+  delay
+  return
+
+sub frame_1
+  1 servo
+  delay
+  return
+
+sub frame_2
+  2 servo
+  delay
+  return
+
+sub frame_3
+  3 servo
+  delay
+  return
+
+sub frame_4
+  4 servo
+  delay
+  return
+
+sub frame_3_4
+  4 servo
+  3 servo
+  delay
+  return
+
+sub frame_1_2
+  2 servo
+  1 servo
+  delay
+  return
+
+sub frame_0_1
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_0
+  0 servo
+  delay
+  return
+
+sub frame_0..4
+  4 servo
+  3 servo
+  2 servo
+  1 servo
+  0 servo
+  delay
+  return
+
+sub frame_15
+  15 servo
+  delay
+  return
+
+sub frame_14_15
+  15 servo
+  14 servo
+  delay
+  return
+
+sub frame_14
+  14 servo
+  delay
+  return
+
+sub frame_16
+  16 servo
+  delay
+  return
+
+sub frame_17
+  17 servo
+  delay
+  return
+
+sub frame_16_17
+  17 servo
+  16 servo
+  delay
+  return</Script>
+</UscSettings>
